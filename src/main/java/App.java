@@ -109,5 +109,59 @@ public class App {
       model.put("template", "templates/task.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    //HTTP GET/POST METHODS FOR EDITING A CATEGORY
+    get("categories/:id/edit", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Category category = Category.find(Integer.parseInt(request.params(":id")));
+      model.put("category", category);
+      model.put("template", "templates/category-edit-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("categories/:id/edit", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Category category = Category.find(Integer.parseInt(request.params(":id")));
+      String name = request.queryParams("name");
+      category.update(name);
+      response.redirect("/");
+      return null;
+    });
+
+    //HTTP GET/POST METHODS FOR EDITING A TASK
+    get("/tasks/:id/edit", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Task task = Task.find(Integer.parseInt(request.params(":id")));
+      model.put("task", task);
+      model.put("template", "templates/task-edit-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/tasks/:id/edit", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Task task = Task.find(Integer.parseInt(request.params(":id")));
+      String description = request.queryParams("description");
+      task.update(description);
+      response.redirect("/tasks");
+      return null;
+    });
+
+
+    //HTTP POST DELETE METHOD FOR CATEGORIES
+    post("/categories/:id/delete", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Category category = Category.find(Integer.parseInt(request.params(":id")));
+      category.delete();
+      response.redirect("/");
+      return null;
+    });
+
+    //HTTP POST DELETE METHOD FOR TASKS
+    post("/tasks/:id/delete", (request, response) -> {
+      Task task = Task.find(Integer.parseInt(request.params(":id")));
+      task.delete();
+      response.redirect("/tasks");
+      return null;
+    });
   }
 }

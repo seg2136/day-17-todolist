@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CategoryTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-09-01T19:18:31" hostname="epicodus-101.local" time="0.273">
+<testsuite name="CategoryTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-09-01T22:52:32" hostname="epicodus-101.local" time="0.23">
   <properties/>
-  <testcase name="equals_returnsTrueIfNamesAretheSame" classname="CategoryTest" time="0.103"/>
-  <testcase name="delete_deletesAllTasksAndListsAssociations" classname="CategoryTest" time="0.064"/>
-  <testcase name="getTasks_returnsAllTasks_ArrayList" classname="CategoryTest" time="0.029"/>
-  <testcase name="all_emptyAtFirst" classname="CategoryTest" time="0.015"/>
-  <testcase name="addTask_addsTaskToCategory" classname="CategoryTest" time="0.033"/>
-  <testcase name="find_findCategoryInDatabase_true" classname="CategoryTest" time="0.014"/>
-  <testcase name="save_savesIntoDatabase_true" classname="CategoryTest" time="0.013"/>
+  <testcase name="equals_returnsTrueIfNamesAretheSame" classname="CategoryTest" time="0.079"/>
+  <testcase name="delete_deletesAllTasksAndListsAssociations" classname="CategoryTest" time="0.056"/>
+  <testcase name="getTasks_returnsAllTasks_ArrayList" classname="CategoryTest" time="0.028"/>
+  <testcase name="all_emptyAtFirst" classname="CategoryTest" time="0.01"/>
+  <testcase name="addTask_addsTaskToCategory" classname="CategoryTest" time="0.028"/>
+  <testcase name="find_findCategoryInDatabase_true" classname="CategoryTest" time="0.015"/>
+  <testcase name="save_savesIntoDatabase_true" classname="CategoryTest" time="0.014"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

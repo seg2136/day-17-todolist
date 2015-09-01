@@ -24,6 +24,16 @@
     <button type='submit'>Add category</button>
 </form>
 
-<p><a href="/tasks/$task.getId()/edit">Edit this task</a></p>
 
-<p><a href='/'>Home</a></p>
+<br>
+  <form action='/tasks/$task.getId()/edit' method='post'>
+    <button type="submit" class="btn btn-success">Edit Task</button>
+  </form>
+
+<br>
+  <form action='/tasks/$task.getId()/delete' method='post'>
+    <button type="submit" class="btn btn-success">Delete Task</button>
+  </form>
+
+<br>
+<p><a href='/'>Back to Main Page</a></p>
