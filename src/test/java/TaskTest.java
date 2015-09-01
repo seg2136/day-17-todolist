@@ -1,3 +1,4 @@
+import java.util.List;
 import org.junit.*;
 import static org.junit.Assert.*;
 
@@ -9,7 +10,7 @@ public class TaskTest {
 
   @Test
   public void all_emptyAtFirst() {
-    assertEquals(Task.all().size());
+    assertEquals(Task.all().size(), 0);
   }
 
   @Test
@@ -80,6 +81,6 @@ public class TaskTest {
     myTask.addCategory(myCategory);
     myTask.delete();
     assertEquals(myCategory.getTasks().size(), 0);
-  }       
+  }
 
 }
